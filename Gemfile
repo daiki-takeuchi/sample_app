@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
-#ruby-gemset=railstutorial_rails_4_2
+#ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.2.3'
+gem 'bootstrap-sass'
+gem 'sprockets'
 
 group :development, :test do
   gem 'sqlite3', '1.3.10'

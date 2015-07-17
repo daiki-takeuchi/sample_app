@@ -2,44 +2,30 @@ require 'rails_helper'
 
 RSpec.describe Micropost, type: :model do
 
-  subject { page }
-
   let(:user) { FactoryGirl.create(:user) }
-  before { sign_in user }
+  before { @micropost = user.microposts.build(content: "Lorem ipsum") }
 
-  describe "micropost destruction" do
-    before { FactoryGirl.create(:micropost, user: user) }
+  subject { @micropost }
 
-    describe "as correct user" do
-      before { visit root_path }
+  it { should respond_to(:content) }
+  it { should respond_to(:user_id) }
+  it { should respond_to(:user) }
+  its(:user) { should eq user }
 
-      it "should delete a micropost" do
-        expect { click_link "delete" }.to change(Micropost, :count).by(-1)
-      end
-    end
+  it { should be_valid }
+
+  describe "when user_id is not present" do
+    before { @micropost.user_id = nil }
+    it { should_not be_valid }
   end
 
-  describe "micropost creation" do
-    before { visit root_path }
+  describe "with blank content" do
+    before { @micropost.content = " " }
+    it { should_not be_valid }
+  end
 
-    describe "with invalid information" do
-
-      it "should not create a micropost" do
-        expect { click_button "Post" }.not_to change(Micropost, :count)
-      end
-
-      describe "error messages" do
-        before { click_button "Post" }
-        it { should have_content('error') }
-      end
-    end
-
-    describe "with valid information" do
-
-      before { fill_in 'micropost_content', with: "Lorem ipsum" }
-      it "should create a micropost" do
-        expect { click_button "Post" }.to change(Micropost, :count).by(1)
-      end
-    end
+  describe "with content that is too long" do
+    before { @micropost.content = "a" * 141 }
+    it { should_not be_valid }
   end
 end

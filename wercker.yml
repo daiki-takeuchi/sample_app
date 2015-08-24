@@ -6,7 +6,6 @@ build:
       - rvm-use:
           version: 2.2.3
       - bundle-install
-          jobs: 4
       - rails-database-yml:
           service: postgresql
       - script:

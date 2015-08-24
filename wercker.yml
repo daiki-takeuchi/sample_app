@@ -1,6 +1,6 @@
 box: wercker/ruby
 build:
-steps:
+    steps:
       - rvm-use:
           version: ruby-2.1.1
       - rails-database-yml:

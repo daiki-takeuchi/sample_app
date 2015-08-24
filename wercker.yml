@@ -1,4 +1,4 @@
-box: wercker/rvm@2.2.0
+box: wercker/rvm-use
 build:
     steps:
       - rvm-use:

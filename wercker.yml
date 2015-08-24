@@ -1,11 +1,8 @@
-box: wercker/box-rvm
+box: wercker/ruby
 services:
   - wercker/postgresql
 build:
     steps:
-        - rvm-use:
-            version: 2.2.0
-
         # A step that executes `bundle install` command
         - bundle-install:
             jobs: 4

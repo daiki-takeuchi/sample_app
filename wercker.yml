@@ -1,8 +1,8 @@
-box: wercker/box-rvm
+box: wercker/ruby
 build:
-    steps:
+steps:
       - rvm-use:
-          version: 2.2.3
+          version: ruby-2.1.1
       - rails-database-yml:
           service: postgresql
       - bundle-install

@@ -1,6 +1,4 @@
 box: phusion/passenger-ruby22
-services:
-    - wercker/postgresql
 build:
     steps:
       - bundle-install

@@ -30,6 +30,7 @@ gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '1.0.2'
+gem 'therubyracer'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

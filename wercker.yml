@@ -1,11 +1,13 @@
 box: volanja/docker-ruby2.2.0
 services:
-  - wercker/postgresql
+  - id: postgres
+    env:
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
 build:
     steps:
       - bundle-install
       - rails-database-yml:
-          service: postgresql
+          service: postgresql-docker
       - script:
           name: echo ruby information
           code: |

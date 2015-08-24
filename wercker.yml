@@ -1,10 +1,8 @@
-box: wercker/rvm
+box: volanja/docker-ruby2.2.0
 services:
   - wercker/postgresql
 build:
     steps:
-      - rvm-use:
-          version: 2.2.3
       - bundle-install
       - rails-database-yml:
           service: postgresql

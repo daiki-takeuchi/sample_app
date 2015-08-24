@@ -1,4 +1,4 @@
-box: volanja/docker-ruby2.2.0
+box: ruby
 services:
   - id: postgres
     env:

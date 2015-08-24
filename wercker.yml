@@ -1,8 +1,6 @@
-box: phusion/passenger-ruby22
+box: volanja/docker-ruby2.2.0
 build:
     steps:
-      - rvm-use:
-            version: 2.2.0
       - bundle-install
       - rails-database-yml:
           service: postgresql

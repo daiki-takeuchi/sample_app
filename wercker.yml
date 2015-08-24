@@ -1,4 +1,4 @@
-box: rails:4.2.3
+box: ruby:2.2.0
 services:
   - id: postgres
     env:

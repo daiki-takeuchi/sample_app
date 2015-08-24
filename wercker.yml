@@ -5,8 +5,6 @@ services:
       POSTGRES_PASSWORD: $DATABASE_PASSWORD
 build:
     steps:
-      - rvm-use:
-          version: 2.2.0
       - bundle-install:
           jobs: $BUNDLEJOBS
       - rails-database-yml:

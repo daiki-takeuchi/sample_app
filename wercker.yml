@@ -1,7 +1,7 @@
 box: volanja/docker-ruby2.2.0
 build:
     steps:
-#      - bundle-install
+      - bundle-install --without production
       - rails-database-yml:
           service: postgresql
       - script:

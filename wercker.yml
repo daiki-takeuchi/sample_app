@@ -22,14 +22,12 @@ build:
           name: Run RSpec
           code: bundle exec rspec
 deploy:
-  steps:
-    ## HerokuへのDeployで必要な環境変数
-    # HEROKU_APP_NAME
-    # HEROKU_KEY(API_KEY)
-    # HEROKU_USER(HerokuID)
-    - heroku-deploy:
-        install-toolbelt: true
-        key-name: $HEROKU_KEY
-    - script:
-        name: rake db:migrate
-        code: heroku run rake db:migrate --app $HEROKU_APP_NAME
+    steps:
+        - heroku-deploy:
+            install-toolbelt: true
+            key: $HEROKU_KEY
+            user: $HEROKU_USER
+            app-name: $HEROKU_APP_NAME
+        - script:
+            name: Update database
+            code: heroku run rake db:migrate --app $HEROKU_APP_NAME

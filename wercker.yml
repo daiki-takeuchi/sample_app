@@ -5,7 +5,8 @@ services:
       POSTGRES_PASSWORD: $DATABASE_PASSWORD
 build:
     steps:
-      - bundle-install
+      - bundle-install:
+          jobs: $BUNDLEJOBS
       - rails-database-yml:
           service: postgresql-docker
       - script:

@@ -1,0 +1,10 @@
+language: ruby
+rvm: 2.2.0
+script: bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: rQkie298y2NIvVNtAhGIcppyc40JhmfovR9koOs8uB4PM2pg8UQmmXGYHIa1EH8SnUTRunVZPXqDiDh8vI1ZTXF8ATL5WwN3bZPhKLgsS7sPYIG0oZgLzvZ+0QbLiLR+nMBNfTxw5brPmVqR+XlNYkcek/v2gtmEWeq6PaIYtXsNy8idnpj/hWTuj+Dq28tzarfRnv9p2Y0utoYsKSTcfAKLPGQqvmiyOHfz/dZQSh7XPxG2pF++yimJrvFi4YMchp9W0GW4x7sz7qqbMhGBImApoVY7PfPTpCfeK0q4dTavX8FsJ2PhVC6F13JKYwUWRBEk1kw94Zm95mW0Yn+Mzr+NEVTwtziV++CeGCweGmPwyJfZR7/lsZg1ou2FGADtVZLjhfEHN/L85026H6sYM1oNkVROSUTQunJ9hSAWbtBs+bjHK1FCbx9uWM9IxX2lg248nEkEmszGhxIEhIVYifa79uqNDEuj0jGJ1IZw6AR6T+Ner6tcd4ot2S0bfcdzXZUhBXON2CbAyngnu04Ue7FBZzEYMcMoH7vaoYvEpSSbKlY5Kqkt6iawElru92gCGFMhFm8oRHeLon7gec+U9cqUoYWn3MhoT4VFaFW7+fIL9GdojhM+N8yGf8lRtUtq56hcKnHI7Glu0EMpCQ3MJ46zesudVze89H4oq1iKXpE=
+  app: murmuring-chamber-5348
+  on:
+    repo: daiki-takeuchi/sample_app
